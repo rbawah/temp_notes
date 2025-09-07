@@ -3,6 +3,11 @@ Follow the steps below to enable the Windows Subsystem for Linux (WSL) feature o
 
 Microsoft recommends WSL 2 unless you have a very specific reason to stick with WSL 1 (like instant access to Windows file performance), please go with WSL2.
 
+### Prerequisites
+
+- Windows 10 version 2004 and higher (Build 19041 and higher) or Windows 11
+- Administrator privileges
+
 
 ### The full WSL2 setup so you get the latest, faster version of the Windows Subsystem for Linux.
 
@@ -17,8 +22,18 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 ```
 Then restart your computer.
 
+Troubleshooting
+- If you get virtualization errors, ensure virtualization is enabled in your BIOS/UEFI settings
+- Restart your PC and enter BIOS
+- If you have an Intel Processor, look for something like `Intel VT-X` and enable it.
+- If you have an AMD processor, it will be `AMD-V`, enable it.
+
 **Step 2: Set WSL 2 as Default**
-- After reboot, open PowerShell (as admin) and run:
+- After reboot, open your terminal (**NOT as admin**) and run:
+```powershell
+wsl.exe --update
+```
+Then set **WSL2** as the default version.
 ```powershell
 wsl --set-default-version 2
 ```
@@ -32,7 +47,7 @@ wsl --list --online
 
 Install Ubuntu:
 ```powershell
-wsl --install -d Ubuntu
+wsl.exe --install Ubuntu-24.04
 ```
 
 **Step 4: Launch and Configure**
@@ -48,6 +63,89 @@ Inside the Linux shell, run:
 ```bash
 sudo apt update && sudo apt upgrade -y
 ```
+
+### Key Things to Know
+File System Navigation:
+
+- `/mnt/c/` = Your Windows C: drive
+- `/home/your-username/` = Your Linux home directory (recommended for Linux work)
+
+### To navigate to your Linux home:
+```bash
+cd ~
+# or
+cd /home/your-username
+```
+
+### Check WSL version (from Windows PowerShell):
+```powershell
+wsl --list --verbose
+```
+
+### To exit WSL:
+Click on the X at top right corner to close terminal or run:
+```bash
+exit
+```
+Or simply press `Ctrl + D`
+
+### To Get Back into WSL
+- Method 1:  From Command Prompt/PowerShell
+```powershell
+wsl
+```
+This launches your default WSL distribution.
+
+- Method 2:  Launch specific distribution
+```powershell
+wsl -d Ubuntu-24.04
+# or
+ubuntu-24.04
+```
+
+- Method 3: From Start Menu
+
+Search for "Ubuntu 24.04" and click it
+Or search for "WSL" and select your distribution
+
+## Quick Tips
+- `wsl --list` shows all installed distributions
+- `wsl --shutdown` completely shuts down all WSL instances
+- `wsl --terminate Ubuntu-24.04` stops just that specific distribution
+
+## Install essential tools:
+Before you install any package on your Linux distro, everytime, run these commands:
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+Now, let's install some essentials we will need going forward:
+```bash
+sudo apt install curl wget git build-essential
+```
+
+## Python Essentials
+Python comes pre-installed on Ubuntu 24.04, but here's how to check and manage Python installations in WSL:
+```bash
+python3 --version
+# or
+python --version
+```
+
+### If Python Isn't Available
+- Install Python 3:
+```bash
+sudo apt update
+sudo apt install python3 python3-pip
+```
+- Optional - Make `python` point to `python3`
+```bash
+sudo apt install python-is-python3
+```
+- Install essential python tools:
+```bash
+sudo apt install python3-pip python3-venv python3-dev
+```
+
 
 ### if you already have WSL1, you can switch between WSL 1 and WSL 2 for any installed Linux distribution:
 **Step 1: List Installed Distros**
