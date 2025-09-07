@@ -109,6 +109,7 @@ ubuntu-24.04
 ```
 
 - Method 3: From Start Menu
+
 Search for "Ubuntu 24.04" and click it
 Or search for "WSL" and select your distribution
 
