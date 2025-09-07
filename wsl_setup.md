@@ -64,6 +64,30 @@ Inside the Linux shell, run:
 sudo apt update && sudo apt upgrade -y
 ```
 
+### Key Things to Know
+File System Navigation:
+
+- `/mnt/c/` = Your Windows C: drive
+- `/home/your-username/` = Your Linux home directory (recommended for Linux work)
+
+### To navigate to your Linux home:
+```bash
+cd ~
+# or
+cd /home/your-username
+```
+
+### Install essential tools:
+```bash
+sudo apt install curl wget git build-essential
+```
+
+### Check WSL version (from Windows PowerShell):
+```powershell
+wsl --list --verbose
+```
+
+
 ### if you already have WSL1, you can switch between WSL 1 and WSL 2 for any installed Linux distribution:
 **Step 1: List Installed Distros**
 
