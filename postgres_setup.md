@@ -50,7 +50,7 @@ CREATE USER yourusername WITH PASSWORD 'yourpassword';
 CREATE DATABASE yourdatabase OWNER yourusername;
 ```
 - Grant all privileges
-bash```
+```bash
 GRANT ALL PRIVILEGES ON DATABASE yourdatabase TO yourusername;
 ```
 
@@ -63,3 +63,4 @@ GRANT ALL PRIVILEGES ON DATABASE yourdatabase TO yourusername;
 ```bash
 exit
 ```
+
