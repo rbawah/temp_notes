@@ -18,7 +18,11 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 Then restart your computer.
 
 **Step 2: Set WSL 2 as Default**
-- After reboot, open PowerShell (as admin) and run:
+- After reboot, open your terminal (**NOT as admin**) and run:
+```powershell
+wsl.exe --update
+```
+Then set **WSL2** as the default version.
 ```powershell
 wsl --set-default-version 2
 ```
@@ -32,7 +36,7 @@ wsl --list --online
 
 Install Ubuntu:
 ```powershell
-wsl --install -d Ubuntu
+wsl.exe --install Ubuntu-24.04
 ```
 
 **Step 4: Launch and Configure**
