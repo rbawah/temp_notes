@@ -65,5 +65,19 @@ docker rmi python:3.11
 # Build an image from a Dockerfile
 docker build -t myapp:latest .
 ```
+## Clean up
+```bash
+# Remove stopped containers
+docker container prune
+
+# Remove unused images
+docker image prune
+
+# Remove unused volumes
+docker volume prune
+
+# Remove everything not in use
+docker system prune -a
+```
 
 
