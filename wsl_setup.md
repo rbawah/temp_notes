@@ -77,11 +77,6 @@ cd ~
 cd /home/your-username
 ```
 
-### Install essential tools:
-```bash
-sudo apt install curl wget git build-essential
-```
-
 ### Check WSL version (from Windows PowerShell):
 ```powershell
 wsl --list --verbose
@@ -116,7 +111,40 @@ Or search for "WSL" and select your distribution
 ## Quick Tips
 - `wsl --list` shows all installed distributions
 - `wsl --shutdown` completely shuts down all WSL instances
-- `wsl --terminate` Ubuntu-24.04 stops just that specific distribution
+- `wsl --terminate Ubuntu-24.04` stops just that specific distribution
+
+## Install essential tools:
+Before you install any package on your Linux distro, everytime, run these commands:
+```bash
+sudo apt update && sudo apt upgrade -y
+```
+Now, let's install some essentials we will need going forward:
+```bash
+sudo apt install curl wget git build-essential
+```
+
+## Python Essentials
+Python comes pre-installed on Ubuntu 24.04, but here's how to check and manage Python installations in WSL:
+```bash
+python3 --version
+# or
+python --version
+```
+
+### If Python Isn't Available
+- Install Python 3:
+```bash
+sudo apt update
+sudo apt install python3 python3-pip
+```
+- Optional - Make `python` point to `python3`
+```bash
+sudo apt install python-is-python3
+```
+- Install essential python tools:
+```bash
+sudo apt install python3-pip python3-venv python3-dev
+```
 
 
 ### if you already have WSL1, you can switch between WSL 1 and WSL 2 for any installed Linux distribution:
