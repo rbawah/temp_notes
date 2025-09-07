@@ -87,6 +87,31 @@ sudo apt install curl wget git build-essential
 wsl --list --verbose
 ```
 
+### To exit WSL:
+Click on the X at top right corner to close terminal or run:
+```bash
+exit
+```
+Or simply press `Ctrl + D`
+
+### To Get Back into WSL
+- Method 1:  From Command Prompt/PowerShell
+```powershell
+wsl
+``
+This launches your default WSL distribution.
+
+- Method 2:  Launch specific distribution
+```powershell
+wsl -d Ubuntu-24.04
+# or
+ubuntu-24.04
+```
+
+- Method 3: From Start Menu
+Search for "Ubuntu 24.04" and click it
+Or search for "WSL" and select your distribution
+
 
 ### if you already have WSL1, you can switch between WSL 1 and WSL 2 for any installed Linux distribution:
 **Step 1: List Installed Distros**
