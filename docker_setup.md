@@ -30,7 +30,7 @@ sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin d
 # Start Docker service
 sudo service docker start
 
-# (Optional) Run docker without sudo
+# (Optional) This would allow you to Run docker without `sudo`
 sudo usermod -aG docker $USER
 ```
 
@@ -65,4 +65,5 @@ docker rmi python:3.11
 # Build an image from a Dockerfile
 docker build -t myapp:latest .
 ```
+
 
