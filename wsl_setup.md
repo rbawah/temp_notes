@@ -3,6 +3,11 @@ Follow the steps below to enable the Windows Subsystem for Linux (WSL) feature o
 
 Microsoft recommends WSL 2 unless you have a very specific reason to stick with WSL 1 (like instant access to Windows file performance), please go with WSL2.
 
+### Prerequisites
+
+- Windows 10 version 2004 and higher (Build 19041 and higher) or Windows 11
+- Administrator privileges
+
 
 ### The full WSL2 setup so you get the latest, faster version of the Windows Subsystem for Linux.
 
@@ -16,6 +21,12 @@ dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux 
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 ```
 Then restart your computer.
+
+Troubleshooting
+- If you get virtualization errors, ensure virtualization is enabled in your BIOS/UEFI settings
+- Restart your PC and enter BIOS
+- If you have an Intel Processor, look for something like `Intel VT-X` and enable it.
+- If you have an AMD processor, it will be `AMD-V`, enable it.
 
 **Step 2: Set WSL 2 as Default**
 - After reboot, open your terminal (**NOT as admin**) and run:
