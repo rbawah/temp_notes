@@ -113,6 +113,12 @@ ubuntu-24.04
 Search for "Ubuntu 24.04" and click it
 Or search for "WSL" and select your distribution
 
+## Quick Tips
+
+`wsl --list` shows all installed distributions
+`wsl --shutdown` completely shuts down all WSL instances
+`wsl --terminate` Ubuntu-24.04 stops just that specific distribution
+
 
 ### if you already have WSL1, you can switch between WSL 1 and WSL 2 for any installed Linux distribution:
 **Step 1: List Installed Distros**
