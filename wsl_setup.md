@@ -98,7 +98,7 @@ Or simply press `Ctrl + D`
 - Method 1:  From Command Prompt/PowerShell
 ```powershell
 wsl
-``
+```
 This launches your default WSL distribution.
 
 - Method 2:  Launch specific distribution
