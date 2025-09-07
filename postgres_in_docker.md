@@ -1,5 +1,7 @@
 # Option 2: Run PostgreSQL using Docker (Alternative)
+
 **1. Pull and run PostgreSQL container**
+
 Set `yourusername`, `yourpassword` and `yourdatabasename`:
 ```bash
 # Run PostgreSQL container
@@ -17,6 +19,7 @@ docker ps
 ```
 
 **2. Connect to PostgreSQL in Docker**
+
 Connect using Docker exec
 ```bash
 docker exec -it postgres-db psql -U yourusername -d yourdatabasename
