@@ -64,3 +64,18 @@ GRANT ALL PRIVILEGES ON DATABASE yourdatabase TO yourusername;
 exit
 ```
 
+**Step 4. Configure PostgreSQL for easier access**
+Create a PostgreSQL user that matches your Ubuntu username
+```bash
+sudo -u postgres createuser --interactive
+```
+- Follow the prompts:
+- Enter name of role to add: [your ubuntu username]
+- Shall the new role be a superuser? (y/n) y
+
+Create a database with your username
+```bash
+sudo -u postgres createdb $USER
+```
+
+
