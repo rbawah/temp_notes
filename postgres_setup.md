@@ -78,4 +78,19 @@ Create a database with your username
 sudo -u postgres createdb $USER
 ```
 
+**Step 5: Connect to PostgreSQL**
+Connect to your database
+```bash
+psql
+```
+
+Or connect to a specific database
+```bash
+psql -d yourdatabase
+```
+
+Or connect with specific user
+```bash
+psql -U yourusername -d yourdatabase
+```
 
