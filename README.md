@@ -10,3 +10,5 @@ NOTE: For MacOS and Linux users, please skip the first step
 4. [Use Postgres in Docker](./files/postgres_in_docker.md)
 
 5. [Open a Databricks Free Account](./files/databricks_setup.md)
+
+6. Optional: [Setup SSH for Github](./files/github_ssh_setup.md)
