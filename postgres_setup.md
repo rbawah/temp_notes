@@ -94,3 +94,57 @@ Or connect with specific user
 psql -U yourusername -d yourdatabase
 ```
 
+## Common PostgreSQL Commands
+### Basic operations
+```sql
+-- List all databases
+\l
+
+-- Connect to a database
+\c database_name
+
+-- List all tables
+\dt
+
+-- List all users
+\du
+```
+Create a table
+```sql
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100) UNIQUE
+);
+```
+Insert data
+```sql
+INSERT INTO users (name, email) VALUES ('John Doe', 'john@example.com');
+```
+Select data
+```sql
+SELECT * FROM users;
+```
+
+Exit PostgreSQL
+```sql
+\q
+```
+
+### Useful management commands
+```sql
+# Check PostgreSQL status
+sudo service postgresql status
+
+# Stop PostgreSQL
+sudo service postgresql stop
+
+# Restart PostgreSQL
+sudo service postgresql restart
+
+# View PostgreSQL logs
+sudo journalctl -u postgresql
+
+# Access PostgreSQL configuration
+sudo nano /etc/postgresql/16/main/postgresql.conf
+``
